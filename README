@@ -1,0 +1,45 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=815
+
+    Black background and lightgray text.
+    Outer has some unique feature. (LineNr&Fold, NonText, etc...)
+    No bold. No italic. For very small font. (I'm using 7.5pts font in NotePC)
+    Six colorschemes are using only 15 cterm colors, hhdred is using 16 cterm colors. But now, they are almost gui only.
+    Seven variations with a feeling of unification. So it is easy to change hhd<theme> by session, filetype, account, mood or "Today's Lucky Color".
+
+    Try hhdgray first.
+
+cterms
+    dos: Terrible. No underline. lightred=>red, lightgreen=>green, and so on.
+    xterm: Terrible. lightred=>red, lightgreen=>green, and so on.
+    gnometerm: May be compatible. Please send report(simply OK or NG) to me.
+
+Options
+    format:                                                           
+           hhcs_<gui|cterm|both>_<theme|all>_<target>="value"         
+    target:                                                           
+       linenr                                                         
+           "light"      : underline, fg=black,        bg=light<theme> 
+           "dark"       : underline, fg=black,        bg=dark<theme>  
+           "normal"     : none,      fg=light<theme>, bg=black        
+       nontext                                                        
+           "underlined" : underline, fg=dark<theme>,  bg=black        
+           "normal"     : none,      fg=dark<theme>,  bg=black        
+    example:                                                             
+       This is original settings.                                 
+           :let hhcs_both_all_linenr  ="light"                    
+           :let hhcs_both_all_nontext ="underlined"               
+       This is prototype settings.                                
+           :let hhcs_both_all_linenr  ="dark"                     
+           :let hhcs_both_all_nontext ="underlined"               
+       If you don't want to eccentric feature, try this.          
+           :let hhcs_both_all_linenr  ="normal"                   
+           :let hhcs_both_all_nontext ="normal"                   
+       Normal, except hhdgray(gui), hhdgreen(cterm).              
+           :let hhcs_both_all_linenr        ="normal"             
+           :let hhcs_both_all_nontext       ="normal"             
+           :let hhcs_gui_hhdgray_linenr     ="light"              
+           :let hhcs_gui_hhdgray_nontext    ="underlined"         
+           :let hhcs_cterm_hhdgreen_linenr  ="dark"               
+           :let hhcs_cterm_hhdgreen_nontext ="underlined"         
+       For poor cterm                                             
+           :let hhcs_cterm_all_linenr     ="normal"               
